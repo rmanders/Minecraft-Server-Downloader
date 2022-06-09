@@ -22,7 +22,7 @@ jobs:
       run: go build -v ./cmd/mc-server-downloader
 
     - name: Test
-      run: go test -v ./cmd/mc-server-downloaderi
+      run: go test -v ./cmd/mc-server-downloader
 
   build-macos:
     runs-on: macos-latest
