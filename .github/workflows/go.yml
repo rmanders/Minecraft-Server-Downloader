@@ -8,8 +8,24 @@ on:
 
 jobs:
 
-  build:
-    runs-on: [ ubuntu-latest, macos-latest, windows-latest ] 
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.18
+
+    - name: Build
+      run: go build -v ./cmd/mc-server-downloader
+
+    - name: Test
+      run: go test -v ./cmd/mc-server-downloaderi
+
+  build-macos:
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3
 
@@ -23,3 +39,20 @@ jobs:
 
     - name: Test
       run: go test -v ./cmd/mc-server-downloader
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.18
+
+    - name: Build
+      run: go build -v ./cmd/mc-server-downloader
+
+    - name: Test
+      run: go test -v ./cmd/mc-server-downloader
+
