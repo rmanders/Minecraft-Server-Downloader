@@ -1,9 +1,12 @@
 # Minecraft-Server-Downloader
 A little tool written in go for fetching the most recent Minecraft Java Edition server jar
 
+![Build: Main](https://github.com/rmanders/minecraft-server-downloader/actions/workflows/go.yml/badge.svg?branch=main)
+
 
 ## Building
 
 ```
-go build -o mc-server-downloader ./cmd/mc-server-downloader/main.go
+go build ./cmd/mc-server-downloader
 ```
+
