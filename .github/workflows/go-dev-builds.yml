@@ -1,4 +1,4 @@
-name: Go
+name: Go Dev Builds
 
 on:
   push:
